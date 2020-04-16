@@ -19,7 +19,7 @@ $(document).ready( function() {
 
 // Setup
 
-// Ref funzionalità
+// Ref funzionalità Incomplete task
 var listStart = [
     'Corso - 9.30-15.00',
     'Esercizio',
@@ -28,6 +28,9 @@ var listStart = [
 ]
 var listContainer = $('.list-container');
 var input = $('.input-section input');
+
+// Ref funzionalità Completed task
+var listContainerCompleted = $('.list-container_completed')
 
 // Ref Data
 var dateNow = new Date();
@@ -122,10 +125,36 @@ for(var i = 0; i < listStart.length; i++) {
     listContainer.append(listTaskClone);
 };
 
+// Andiamo al pannello "Completed Tasks" al click sul link
+$('.right-header .completed-link').click(function(event) {
+
+    if($('.completed-link').hasClass('active') == false) {
+        $('.completed-link').addClass('active');
+        $('.incomplete-link').removeClass('active');
+        $('.todo-list').toggle();
+        $('.todo-list_completed').toggle();
+    };   
+});
+
+// Andiamo al pannello "Incomplete Tasks" al click sul link
+$('.right-header .incomplete-link').click(function(event) {
+
+    if($('.incomplete-link').hasClass('active') == false) {
+        $('.incomplete-link').addClass('active');
+        $('.completed-link').removeClass('active');
+        $('.todo-list_completed').toggle();
+        $('.todo-list').toggle();
+    };   
+});
+
 // Cancellare elemento dalla lista con metodo ON()
 
-$('body').on('click', '.todo-list ul li a', function() {
-    $(this).parent().remove();
+$('body').on('click', '.todo-list ul li a.delete', function() {
+    $(this).parent().parent().remove();
+});
+
+$('body').on('click', '.todo-list_completed ul li a.delete', function() {
+    $(this).parent().parent().remove();
 });
 
 // Aggiungere elemento tramite input
@@ -160,11 +189,22 @@ $('.input-section button').click(function(event) {
 
 // Click sull'elemento per renderlo completato
 
-$('body').on('click', '.todo-list ul li', function() {
-    $(this).addClass('completed');
+$('body').on('click', '.todo-list ul li a.complete', function() {
+    var newTaskCompleted = $(this).parent().parent();
+    $(this).html('<i class="fas fa-redo-alt"></i>')
+    newTaskCompleted.addClass('completed')
+    listContainerCompleted.append(newTaskCompleted);
+    
 });
 
+// Click per rendere "incomplete" un elemento "completed"
 
-
+$('body').on('click', '.todo-list_completed ul li  a.complete', function() {
+    var newTaskIncomplete = $(this).parent().parent();
+    $(this).html('<i class="far fa-check-circle"></i>')
+    newTaskIncomplete.removeClass('completed')
+    listContainer.append(newTaskIncomplete);
+   
+});
 
 }); // <- End Doc Ready!

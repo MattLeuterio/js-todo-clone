@@ -137,6 +137,10 @@ template-task {
     margin-right: 40px;
 }
 
+.active {
+    color: #fff
+}
+
 /* Main */
 
 .main-section {
@@ -146,34 +150,48 @@ template-task {
 
 /* todo list section */
 
-.todo-list {
+.todo-list,
+.todo-list_completed {
     width: 100%;
     max-height: 100%;
     overflow-y: auto;
 }
 
 
-.todo-list ul li {
+.todo-list ul li,
+.todo-list_completed ul li {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
     border-bottom: 1px solid #8d9196;
-    cursor: pointer;
 }
 
-.todo-list ul li:last-child {
+
+
+.todo-list ul li:last-child,
+.todo-list_completed ul li:last-child {
     border: none;
 }
 
-.todo-list ul li a {
+.todo-list ul li a,
+.todo-list_completed ul li a {
     margin-right: 20px;
 }
 
-.todo-list ul li a:hover {
+.todo-list ul li a.delete:hover,
+.todo-list_completed ul li a.delete:hover {
     color: rgb(190, 65, 65);
 }
 
-.todo-list ul li.completed {
-    text-decoration: line-through;
+.todo-list ul li a.complete:hover,
+.todo-list_completed ul li a.complete:hover {
     color: rgb(69, 190, 65);
 }
+
+
+/* Todo list COMPLETED */
+
+.todo-list_completed {
+    display: none; /* jQuery */
+    color: #61dbfb;
+};

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
+    <title>MyTasks App</title>
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <!-- Google Font - Lato  -->
@@ -24,7 +24,7 @@
             <section class="left-header">
 
                 <div class="title-date">
-                    <h1>MyTask App</h1>
+                    <h1>MyTasks App</h1>
                     <h3 class="today-date">Thursday, April 16</h3>
                 </div>
                 
@@ -36,22 +36,37 @@
             </section>
             <!-- Right Section -->
             <section class="right-header">
-                <a class="incomplete-link" href="">Incomplete Tasks</a>
-                <a class="completed-link" href="">Completed Tasks</a>
+                <a class="incomplete-link active" href="#">Incomplete Tasks</a>
+                <a class="completed-link" href="#">Completed Tasks</a>
             </section>
         </header>
 
         <main class="main-section">
-
+            <!-- Incomplete Tasks -->
             <div class="todo-list">
                 <ul class="list-container">
-                    <li class="list-element animation-cancelled">
+                    <li class="list-element">
                         My task - you can delete me ->
-                        <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+                        <span>
+                            <a class="complete" href="#"><i class="far fa-check-circle"></i></a>
+                            <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+                        </span> 
                     </li>
                 </ul>
             </div>
-            
+            <!-- Completed Tasks -->
+            <div class="todo-list_completed">
+                <ul class="list-container_completed">
+                    <li class="list-element">
+                         Completed task
+                         <span>
+                            <a class="complete" href="#"><i class="fas fa-redo-alt"></i></a>
+                            <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+                        </span> 
+                    </li>
+                </ul>
+            </div>
+     
         </main>
         
     </div>
@@ -61,7 +76,10 @@
     <!-- template task -->
     <div class="template-task">
         <li>
-            <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+            <span>
+                <a class="complete" href="#"><i class="far fa-check-circle"></i></a>
+                <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+            </span> 
         </li>
     </div>
    
