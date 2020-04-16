@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    /* transition hover */
+    transition: color .2s;
+}
+
+/* utility */
+
+.u_flex {
+    display: flex;
+}
+
+.u_flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.u_pAbsolute {
+    position: absolute;
+}
+
+.u_pRelative {
+    position: relative;
+}
+
+.u_listStyleNone {
+    list-style: none;
+}
+/* APP */
+
+.app {
+    background: #393f49;
+    width: 930px;
+    height: 630px;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 15px 5px;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+/* template */
+
+template-task {
+    display: none;
+}
+
+/* Header */
+
+.main-header {
+    height: 25%;
+}
+
+.left-header {
+    width: 60%;
+}
+
+.right-header {
+    width: 40%;
+    text-align: right;
+    color: #8d9196;
+}
+
+/* Left Header */
+
+.title-date h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.title-date h3 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #61dbfb;
+}
+
+.input-section input {
+    width: 60%;
+    height: 35px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-left: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, .7);
+
+    /* transition hover/focus */
+    transition: background .2s;
+}
+
+.input-section input:hover,
+.input-section input:focus {
+    background: #fff;
+}
+
+.input-section button {
+    width: 20%;
+    height: 35px;
+    margin-left: 5px;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    background: #48bedb;
+    cursor: pointer;
+    outline: none;
+}
+
+.input-section button:hover {
+    background: #4699ad;
+}
+
+
+/* Right Header */
+.right-header a:hover {
+    color: #fff;
+}
+
+.right-header .incomplete-link {
+    margin-right: 40px;
+}
+
+/* Main */
+
+.main-section {
+    height: 75%;
+    border-top: 1px solid #8d9196;
+}
+
+/* todo list section */
+
+.todo-list {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+
+.todo-list ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #8d9196;
+}
+
+.todo-list ul li:last-child {
+    border: none;
+}
+
+.todo-list ul li a {
+    margin-right: 20px;
+}
+
+.todo-list ul li a:hover {
+    color: rgb(190, 65, 65);
+}
+
+.todo-list ul li.completed {
+    text-decoration: line-through;
+}
+

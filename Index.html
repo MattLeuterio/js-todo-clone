@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Google Font - Lato  -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+    
+    <!-- Applicazione -->
+    <div class="app u_flexColumn">
+        <!-- Header -->
+        <header class="main-header u_flex">
+            <!-- Left Section -->
+            <section class="left-header">
+
+                <div class="title-date">
+                    <h1>MyTask App</h1>
+                    <h3 class="today-date">Thursday, April 16</h3>
+                </div>
+                
+                <div class="input-section">
+                    <input type="text" placeholder="Enter a task.." data-element=''>
+                    <button class="add-task">Add Task</button>
+                </div>
+                
+            </section>
+            <!-- Right Section -->
+            <section class="right-header">
+                <a class="incomplete-link" href="">Incomplete Tasks</a>
+                <a class="completed-link" href="">Completed Tasks</a>
+            </section>
+        </header>
+
+        <main class="main-section">
+
+            <div class="todo-list">
+                <ul class="list-container">
+                    <li class="list-element">
+                        My task - you can delete me ->
+                        <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+                    </li>
+                </ul>
+            </div>
+            
+        </main>
+        
+    </div>
+
+    <!-- Template -->
+
+    <!-- template task -->
+    <li class="template-task">
+        My task - you can delete me ->
+        <a class="delete" href="#"><i class="far fa-trash-alt"></i></a>
+    </li>
+
+
+</body>
+</html>
